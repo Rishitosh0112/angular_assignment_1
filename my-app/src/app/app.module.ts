@@ -1,16 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { HttpModule } from '@angular/http'
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { SearchComponentComponent } from './search-component/search-component.component';
-import { SearchService } from './search.service'
- 
+import { SearchService } from './search.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponentComponent  
+    SearchComponentComponent
   ],
   imports: [
     BrowserModule,

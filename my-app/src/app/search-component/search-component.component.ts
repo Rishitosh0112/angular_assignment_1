@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from "rxjs/Subject";
+import { Subject } from 'rxjs/Subject';
 import { SearchService } from '../search.service';
-import "rxjs/add/operator/debounceTime";
-import "rxjs/add/operator/distinctUntilChanged";
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
   selector: 'app-search-component',
@@ -15,7 +15,7 @@ export class SearchComponentComponent implements OnInit {
   searchService: SearchService;
 
   private searchUpdated: Subject<any> = new Subject<any>();
-  constructor(searchService: SearchService) { 
+  constructor(searchService: SearchService) {
     this.searchService = searchService;
   }
   private onSearchTyped(event: Event) {
@@ -27,19 +27,20 @@ export class SearchComponentComponent implements OnInit {
      res => {
        this.allWords = res;
      },
-     err => { console.log('err', err)}
+     err => { console.log('err', err); }
 
-    )
+    );
   }
-  ngOnInit() {  
+  ngOnInit() {
   this.searchEmitter = this.searchUpdated.debounceTime(300).subscribe(
        (data) => {
         console.log('data-->', data);
         this.getData(data);
       },
-    )
+    );
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngOnDestroy() {
     this.searchEmitter.unsubscribe();
   }
