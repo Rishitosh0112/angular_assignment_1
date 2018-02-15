@@ -6,8 +6,6 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SearchService {
-  // headersObj:Headers  = new Headers();
-  // reqOptions: RequestOptions = new RequestOptions();
   constructor(private http: Http) {
     this.http = http;
   }
