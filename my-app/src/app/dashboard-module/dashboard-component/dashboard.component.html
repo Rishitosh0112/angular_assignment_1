@@ -1,0 +1,37 @@
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-md-3">
+            <input class="form-control" type="text" [(ngModel)]="addMember.id" placeholder = "Id">
+         </div>
+         <div class = "col-md-3">  
+            <input class="form-control" type="text" [(ngModel)]="addMember.login" placeholder = "Login">
+         </div>
+         <div class = "col-md-3">   
+            <input class="form-control" type="text" [(ngModel)]="addMember.url" placeholder = "Url"> 
+          </div>  
+        <div class = "col-md-3">
+        <button (click) = "AddMemberFunc()"class = "btn btn-primary">ADD</button>
+        </div>  
+        </div>
+    <div class = "row">
+        <div class = "col-md-12">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Login</th>
+                    <th>Url</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let member of allMembers; index as i">
+                     <td>{{member.id}}</td>
+                    <td>{{member.login}}</td>
+                    <td>{{member.url}}</td>
+                    <td class = "cursor" (click) = delete(i)>Delete</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
