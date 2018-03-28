@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
-    styleUrls: ['./header.component.less']
+    styleUrls: ['./header.component.less', '../../app.component.less'], 
 })
 
 export class HeaderComponent implements OnInit {
@@ -14,11 +14,6 @@ export class HeaderComponent implements OnInit {
             (res) => {
                 this.isNavbarComponent = res
                 console.log('com name', this.route.routerState.snapshot.url);
-                //  if (this.route.routerState.snapshot.url === '/login') {
-                //     this.isNavbarComponent = false;
-                //   } else {
-                //     this.isNavbarComponent = res
-                //  }
             }
         );
     }
