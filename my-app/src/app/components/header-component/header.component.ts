@@ -9,10 +9,14 @@ import { Router } from '@angular/router';
 
 export class HeaderComponent implements OnInit {
     isNavbarComponent = false;
+    userEmail: string = ''
     ngOnInit(): void {
-        this.authService.isAuthenticated().subscribe(
+        this.authService.userAuthenticated().subscribe(
             (res) => {
-                this.isNavbarComponent = res
+                if(res && res.uid) {
+                    this.isNavbarComponent = true
+                    this.userEmail = res.email;
+                }
                 console.log('com name', this.route.routerState.snapshot.url);
             }
         );

@@ -1,7 +1,7 @@
 <nav *ngIf = 'isNavbarComponent && route.routerState.snapshot.url === "/dashboard"' class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" >Team App</a>
+            <a class="navbar-brand" >{{userEmail}}</a>
           </div>
           <ul class="nav navbar-nav">
             <li><a class = "cursor" routerLinkActive="active-link" (click) = "logout()">Logout</a></li>
