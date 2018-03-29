@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 export class HeaderComponent implements OnInit {
     isNavbarComponent = false;
-    userEmail: string = ''
+    userEmail: string = '';
     ngOnInit(): void {
         this.authService.userAuthenticated().subscribe(
             (res) => {
@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
         );
     }
     constructor(private authService: AuthService, private route: Router) {
-        console.log('authService--->', authService);
     }
     logout() {
         this.authService.logout();

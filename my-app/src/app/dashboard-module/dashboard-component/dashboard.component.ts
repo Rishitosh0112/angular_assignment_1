@@ -8,7 +8,7 @@ import { Service } from '../../service';
 })
 
 export class DashboardComponent implements OnInit {
-    allMembers: {}[];
+    allMembers;
     addMember = {
         id: '',
         login: '',
