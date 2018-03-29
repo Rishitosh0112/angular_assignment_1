@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header-component/header.component'
 
 import { Service } from './service';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { UserIconComponent } from './components/user-icon/user-icon.component';
 const angularConfig = {
   apiKey: 'AIzaSyAPY4pCo614nbg6r4f3_gpLhu7wP4d9b7U',
   authDomain: 'angularapp-7099c.firebaseapp.com',
@@ -31,7 +32,8 @@ const angularConfig = {
   declarations: [
     AppComponent,
     HeaderComponent,
-    NoPageFoundComponent
+    NoPageFoundComponent,
+    UserIconComponent
   ],
   imports: [
     BrowserModule,
