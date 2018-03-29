@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
         passowrd: this.password
     });
     ngOnInit(): void {
-        this.authService.token = '';
+        this.authService.logout();
     }
     constructor(private router: Router, private authService:  AuthService) {
     }
@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
        this.authService.loginWithEmail(this.emailId.value, this.password.value).subscribe(
            (res) => {
            this.router.navigate(['/dashboard']);
-        }
-           ,
+        },
            (err) => { alert(err); }
        );
     }

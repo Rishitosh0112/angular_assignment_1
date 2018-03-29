@@ -10,7 +10,7 @@ export const routes = [
     { path: 'dashboard', canActivate: [AuthGuardService], loadChildren: '../dashboard-module/dashboard.module#DashboardModule'},
     { path: 'userIcon', canActivate: [AuthGuardService], component: UserIconComponent}, 
     { path: 'noPageFound', component: NoPageFoundComponent},
-    { path: '', redirectTo: 'noPageFound', pathMatch: 'prefix'},
+    { path: '', redirectTo: 'login', pathMatch: 'prefix'},
     { path: '**', redirectTo: 'noPageFound', pathMatch: 'full'}
 ];
 
